@@ -1,4 +1,4 @@
-# img-cloud
+# Image Cloud 
 
 # Installation
 
