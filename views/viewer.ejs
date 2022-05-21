@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title></title>
+
+  <meta name="theme-color" content="<%= randomHexColor %>">
+  <meta property="og:image" content="/images/<%= fileName %>">
+  <meta property="og:title" content="<%= fileName %> | Image Cloud">
+  <meta property="og:description" content="<%= description %>">
+
+  <link rel=icon href="https://media.discordapp.net/attachments/935785360091394081/961591900417171486/bfc01ee8c177c8a68801c1a94447327c.jpg">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      outline: none;
+      user-select: none;
+    }
+
+    body {
+      color: #ffffff;
+      background-color: #000000;
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="flex h-screen">
+    <div class="m-auto" style="width: 75vh">
+      <div class="bg-white rounded-lg p-10 pt-5 pb-5 bg-opacity-30">
+        <img src="/images/<%= fileName %>" draggable="false" class="cursor-pointer w-full"
+          onclick="window.open(this.src)" />
+        <div class="grid grid-flow-col mt-5">
+          <div class="flex space-x-1">
+            <span class="float-left h-6 w-6 mr-2"><img draggable="false" alt="📅"
+                src="https://twemoji.maxcdn.com/v/13.1.0/72x72/1f4c5.png" />
+            </span>
+            <%= fileDate %>
+          </div>
+          <div class="flex justify-end space-x-1">
+            <span class="float-left h-6 w-6 mr-2"><img draggable="false" alt="💾"
+                src="https://twemoji.maxcdn.com/v/13.1.0/72x72/1f4be.png" /></span>
+            <%= fileSize %> MB
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.title = '<%= fileName %> | Image Cloud'
+  </script>
+</body>
+
+</html>
