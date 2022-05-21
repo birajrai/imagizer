@@ -1,10 +1,14 @@
-# Image Cloud 
+
+
+
+
 
 # Installation
 
 ```
+git clone https://github.com/birajrai/img-cloud
+cd img-cloud
 npm install
-npm start
 ```
 
 # Configuration
@@ -13,4 +17,9 @@ npm start
 	"port": 3000,
 	"domain": "https://localhost"
 }
+```
+
+# Starting Image Cloud Server
+```
+npm start
 ```
