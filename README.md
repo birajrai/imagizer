@@ -6,12 +6,12 @@
 # Installation
 
 ```
-git clone https://github.com/birajrai/img-cloud
-cd img-cloud
+git clone https://github.com/birajrai/Imagizer
+cd Imagizer
 npm install
 ```
 
-# Configuration
+# Configuration for Imagizer
 ```
 {
 	"port": 3000,
@@ -19,7 +19,19 @@ npm install
 }
 ```
 
-# Starting Image Cloud Server
+# Main Page Login
+
+# Username
+```
+admin
+```
+# Password
+```
+admin
+```
+
+# Starting Imagizer
 ```
 npm start
 ```
+
