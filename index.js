@@ -2,7 +2,7 @@ const fs = require('fs');
 const cors = require('cors');
 const multer = require('multer');
 const express = require('express');
-const config = require('./config/setting.json');
+const config = require('./config.json');
 
 const app = express();
 app.set('view engine', 'ejs');
@@ -40,10 +40,27 @@ const upload = multer({
 
 // Main route
 app.get('/', (req, res) => {
+  const reject = () => {
+    res.setHeader('www-authenticate', 'Basic')
+    res.sendStatus(401)
+  }
+
+  const authorization = req.headers.authorization
+
+  if (!authorization) {
+    return reject()
+  }
+
+  const [username, password] = Buffer.from(authorization.replace('Basic ', ''), 'base64').toString().split(':')
+
+  if (!(username === '' && password === '')) {
+    return reject()
+  }
+
   res.render('index', {
     alert: null,
   });
-});
+})
 
 // EJS route
 app.post('/', upload.single('image'), (req, res) => {
@@ -64,7 +81,7 @@ app.post('/', upload.single('image'), (req, res) => {
 });
 
 // Neppixel route
-app.post('/neppixel', upload.single('image'), (req, res) => {
+app.post('/imagizer', upload.single('image'), (req, res) => {
   const file = req.file;
   if (file) {
     const type = file.mimetype.split('/');
@@ -94,13 +111,12 @@ app.get('/:filename', (req, res) => {
       description: `I wasted ${fileSize}MB on ${fileDate}`,
     });
   } catch (error) {
-    console.log("Some kid went to invaid url");
     res.redirect('/');
   }
 });
 
 app.listen(config.port, () => {
-  console.log(`Online on Port ${config.port} || ${config.domain}`);
+  console.log(`Imagizer server started on ${config.domain}:${config.port}`);
 });
 
 function randomHexColor() {
