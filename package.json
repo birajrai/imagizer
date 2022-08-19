@@ -1,7 +1,7 @@
 {
 	"name": "imagizer",
 	"version": "0.0.1",
-	"description": "An image uploader API and website compatible with Neppixel built in Node.js.",
+	"description": "An image uploader website compatible with Neppixel built in Node.js.",
 	"main": "index.js",
 	"scripts": {
 		"start": "node index.js",
