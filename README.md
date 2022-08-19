@@ -19,14 +19,9 @@ npm install
 }
 ```
 
-# Main Page Login
+# Auth
 
-## Username
-```
-admin
-```
-
-## Password
+## Username & Password
 ```
 admin
 ```
