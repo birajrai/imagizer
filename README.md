@@ -19,12 +19,6 @@ npm install
 }
 ```
 
-# Auth
-
-## Username & Password
-```
-admin
-```
 
 # Starting Imagizer
 ```
