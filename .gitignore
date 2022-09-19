@@ -4,3 +4,4 @@ replit.nix
 .github
 config.json
 package-lock.json
+images/*/
