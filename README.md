@@ -1,5 +1,5 @@
 <div align="center" id="top"> 
-  <img src="./.github/logo.gif" alt="Imagizer" />
+  <img src="./public/img/icon.ico" height=100px alt="Imagizer" />
 
 &#xa0;
 
