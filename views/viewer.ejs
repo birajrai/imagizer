@@ -4,14 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title></title>
-
     <meta name="theme-color" content="<%= randomHexColor %>" />
     <meta property="og:image" content="/images/<%= fileName %>" />
     <meta property="og:title" content="<%= fileName %> | <%=title%>" />
     <meta property="og:description" content="<%= description %>" />
     <link rel="stylesheet" href="css/viewer.css" />
+    <title></title>
   </head>
 
   <body>
@@ -24,7 +22,7 @@
             class="cursor-pointer w-full"
             onclick="window.open(this.src)"
           />
-          <div class="grid grid-flow-col mt-5">
+          <div class="grid grid-flow-col black mt-5">
             <div class="flex space-x-1">
               <span class="float-left h-6 w-6 mr-2">📅</span>
               <%= fileDate %>

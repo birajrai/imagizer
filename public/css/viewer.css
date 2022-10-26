@@ -5,6 +5,69 @@
   user-select: none;
 }
 
+.black {
+  color: black;
+}
+
+.flex {
+  display: flex;
+}
+.h-screen {
+  height: 100vh;
+}
+.m-auto {
+  margin: auto;
+}
+
+.bg-white {
+  /* --tw-bg-opacity: 1; */
+  background-color: rgb(255, 255, 255);
+}
+.rounded-lg {
+  border-radius: 0.6rem;
+}
+.pb-5 {
+  padding-bottom: 0.3rem;
+}
+.bg-opacity-30 {
+  --tw-bg-opacity: 0.3;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.w-full {
+  width: 100%;
+}
+.grid {
+  display: grid;
+}
+.grid-flow-col {
+  grid-auto-flow: column;
+}
+/* .mt-5 {
+  margin-top: 1.25rem;
+} */
+.space-x-1 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.float-left {
+  float: left;
+}
+.h-6 {
+  height: 1.5rem;
+}
+.w-6 {
+  width: 1.5rem;
+}
+.mr-2 {
+  margin-right: 0.5rem;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+
 body {
   color: #ffffff;
   background-color: #000000;
