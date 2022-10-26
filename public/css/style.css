@@ -9,7 +9,6 @@
 body {
   background: #000000;
 }
-
 .imagizer {
   font-weight: bold;
   font-size: 40px;
@@ -23,6 +22,11 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
+.anti-a {
+  text-decoration: none;
+  color: white;
 }
 label {
   font-size: 16px;
