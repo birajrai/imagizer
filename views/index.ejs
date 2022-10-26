@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%=title%></title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="imagizer"><%=title%></div>
+    <!-- Choose File -->
+    <div class="sumbit">
+      <form id="submit" action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" id="file" required hidden />
+        <label class="upload-button" for="file" id="fileLabel">
+          Choose File
+        </label>
+      </form>
+    </div>
+    <!-- End -->
+    <script src="js/script.js"></script>
+    <script src="js/submit.js"></script>
+
+    <footer>
+      <div class="footer">
+        <a
+          href="http://github.com/birajrai/Imagizer"
+          target="_blank"
+          rel="imagizer"
+          >Github</a
+        >
+      </div>
+    </footer>
+  </body>
+</html>
