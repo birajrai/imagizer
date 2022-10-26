@@ -46,6 +46,7 @@ const upload = multer({
 app.get("/", (req, res) => {
   res.render("index", { title: config.title, alert: null });
 });
+
 // Upload and Error Router :')
 app.post("/", upload.single("image"), (req, res) => {
   const file = req.file;
