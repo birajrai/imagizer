@@ -59,6 +59,7 @@ app.post("/", upload.single("image"), (req, res) => {
     res.redirect(`/${name}.${type[1]}`);
   } else {
     res.render("index", {
+      title: config.title,
       alert: "Only GIF, JPEG/JPG and PNG are allowed.",
     });
   }
