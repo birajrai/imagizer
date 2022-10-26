@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  user-select: none;
+  font-family: Poppins;
+}
+
+body {
+  background: #000000;
+}
+
+.imagizer {
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+  color: white;
+  padding: 180px;
+}
+.sumbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+label {
+  font-size: 16px;
+  color: white;
+  backdrop-filter: blur(3px);
+}
+label:hover {
+  color: red;
+  font-weight: bold;
+}
+.footer {
+  padding-right: 50px;
+  padding-top: 190px;
+  text-align: right;
+}
+.swal2-popup .swal2-styled:focus {
+  box-shadow: none !important;
+}
