@@ -1,80 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%=title%></title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="imagizer"><%=title%></div>
+    <!-- Choose File -->
+    <div class="sumbit">
+      <form id="submit" action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" id="file" required hidden />
+        <label class="upload-button" for="file" id="fileLabel">
+          Choose File
+        </label>
+      </form>
+    </div>
+    <!-- End -->
+    <script src="js/script.js"></script>
+    <script src="js/submit.js"></script>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Imagizer</title>
-
-  <meta name="theme-color" content="#5865F2">
-  <link rel=icon href="">
-  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      outline: none;
-      user-select: none;
-    }
-
-    body {
-      background-color: #000000;
-      font-family: 'Roboto', sans-serif;
-    }
-
-    div {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-    }
-
-    label {
-      background-color: #5865F2;
-    }
-
-    .swal2-popup .swal2-styled:focus {
-      box-shadow: none !important;
-    }
-  </style>
-</head>
-
-<body>
-  <div>
-    <form id="submit" action="/" method="post" enctype="multipart/form-data">
-      <input type="file" name="image" id="file" required hidden />
-      <label class="mr-1 p-3 rounded-lg cursor-pointer text-black" for="file" id="fileLabel">
-        Choose File
-      </label>
-    </form>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script>
-    document.getElementById("file").addEventListener("change", function (e) {
-      e.preventDefault()
-      document.getElementById("submit").submit()
-      document.getElementById("submit").reset()
-    })
-
-    const onloadAlert = '<%= alert %>'
-
-    if (onloadAlert.length > 0) {
-      window.onload = function () {
-        Swal.fire({
-          title: onloadAlert,
-          width: "auto",
-          showConfirmButton: true,
-          focusConfirm: false,
-          confirmButtonColor: "#5865F2",
-          confirmButtonText: `Okay!`,
-        });
-      }
-    }
-  </script>
-</body>
-
+    <footer>
+      <div class="footer">
+        <a
+          href="http://github.com/birajrai/Imagizer"
+          target="_blank"
+          rel="imagizer"
+          >Github</a
+        >
+      </div>
+    </footer>
+  </body>
 </html>
