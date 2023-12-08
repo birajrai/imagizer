@@ -1,59 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%=title%></title>
-    <link rel="shortcut icon" href="img/icon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <div class="imagizer"><%=title%></div>
-    <!-- Choose File -->
-    <div class="sumbit">
-      <form id="submit" action="/" method="post" enctype="multipart/form-data">
-        <input type="file" name="image" id="file" required hidden />
-        <label class="upload-button" for="file" id="fileLabel">
-          Choose File
-        </label>
-      </form>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%=title%> - Upload To The Cloud</title>
+  <meta name="description" content="Free Open-Source Image Uploader Written In Node.js" />
+  <link rel="shortcut icon" href="img/icon.ico" type="image/x-icon" />
+
+  <!-- SEO Metadata -->
+  <meta name="keywords" content="imagizer, express, ejs, cors, multer, fs" />
+  <meta name="author" content="birajrai" />
+
+  <!-- Open Graph Protocol (OGP) Tags -->
+  <meta property="og:title" content="<%=title%> - Upload To The Cloud" />
+  <meta property="og:description" content="Free Open-Source Image Uploader Written In Node.js" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="Your Website URL" /> <!-- Replace with your actual URL -->
+  <meta property="og:image" content="Your Image URL" /> <!-- Replace with your actual image URL -->
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="<%=title%> - Upload To The Cloud" />
+  <meta name="twitter:description" content="Free Open-Source Image Uploader Written In Node.js" />
+  <meta name="twitter:image" content="Your Image URL" /> <!-- Replace with your actual image URL -->
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="navbar-logo">
+        <img src="img/icon.ico" alt="Imagizer Logo" class="logo-img" />
+        <%=title%>
+      </a>
+      <ul class="navbar-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="https://github.com/birajrai/imagizer" target="_blank">GitHub</a></li>
+        <li><a href="https://discord.gg/YwAk4pWSa2">Support</a></li>
+      </ul>
     </div>
-    <!-- End -->
-    <script src="js/alert.js"></script>
-    <script>
-      document.getElementById("file").addEventListener("change", function (e) {
-        e.preventDefault();
-        document.getElementById("submit").submit();
-        document.getElementById("submit").reset();
-      });
+  </nav>
 
-      const onloadAlert = "<%= alert %>";
+  <!-- Choose File -->
+  <div class="submit">
+    <form id="submit" action="/" method="post" enctype="multipart/form-data">
+      <input type="file" name="image" id="file" required hidden />
+      <label class="upload-button" for="file" id="fileLabel">
+        Choose File
+      </label>
+    </form>
+  </div>
+  <!-- End -->
+<!-- Features Section -->
+<section class="features">
+  <div class="container">
+    <h2 class="feature-heading">Explore the Key Features of Imagizer</h2>
+    <div class="feature-item">
+      <h3>Easy File Upload</h3>
+      <p>Upload your images effortlessly with a simple click. Imagizer simplifies the process, making it quick and convenient for users.</p>
+    </div>
+    <div class="feature-item">
+      <h3>Open Source</h3>
+      <p>Imagizer is an open-source project, inviting you to explore, contribute, and utilize it freely. Join the community and be part of the innovation!</p>
+    </div>
+    <div class="feature-item">
+      <h3>Blazing Fast</h3>
+      <p>Experience lightning-fast performance powered by Node.js and Express. Imagizer ensures swift image processing and delivery for optimal user experience.</p>
+    </div>
+    <div class="feature-item">
+      <h3>Easy to Code</h3>
+      <p>Develop with ease using Imagizer's straightforward and developer-friendly codebase. Enjoy coding without unnecessary complexities.</p>
+    </div>
+    <div class="feature-item">
+      <h3>Free to Use</h3>
+      <p>Imagizer is completely free to use, providing powerful image uploading capabilities at no cost. Enjoy the benefits without breaking the bank!</p>
+    </div>
+    <div class="feature-item">
+      <h3>Easy to Host</h3>
+      <p>Host Imagizer effortlessly on your system, making it convenient for your deployment needs. Simplify the hosting process for a seamless experience.</p>
+    </div>
+    <div class="feature-item">
+      <h3>Data Saving</h3>
+      <p>Imagizer helps you save data efficiently, ensuring a streamlined and optimized storage solution. Manage your data effectively with Imagizer's smart features.</p>
+    </div>
+  </div>
+</section>
 
-      if (onloadAlert.length > 0) {
-        window.onload = function () {
-          Swal.fire({
-            title: onloadAlert,
-            width: "auto",
-            showConfirmButton: true,
-            focusConfirm: false,
-            confirmButtonColor: "#5865F2",
-            confirmButtonText: `Okay!`,
-          });
-        };
-      }
-    </script>
 
-    <footer>
-      <div class="footer">
-        <a
-          class="anti-a"
-          href="http://github.com/birajrai/Imagizer"
-          target="_blank"
-          rel="imagizer"
-          >Github</a
-        >
-      </div>
-    </footer>
-  </body>
+  <!-- Scripts -->
+  <script src="js/alert.js"></script>
+  <script>
+    document.getElementById("file").addEventListener("change", function(e) {
+      e.preventDefault();
+      document.getElementById("submit").submit();
+      document.getElementById("submit").reset();
+    });
+
+    const onloadAlert = "<%= alert %>";
+
+    if (onloadAlert.length > 0) {
+      window.onload = function() {
+        Swal.fire({
+          title: onloadAlert,
+          width: "auto",
+          showConfirmButton: true,
+          focusConfirm: false,
+          confirmButtonColor: "#5865F2",
+          confirmButtonText: `Okay!`,
+        });
+      };
+    }
+
+    // Add this JavaScript to toggle the visibility of the features section
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelector(".features").classList.add("visible");
+    });
+  </script>
+</body>
+
 </html>
