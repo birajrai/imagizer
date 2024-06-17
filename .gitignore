@@ -1,2 +1,3 @@
 node_modules
-plans.txt
+data/*
+public/css/style.css.map
